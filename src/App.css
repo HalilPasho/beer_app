@@ -2,10 +2,39 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.navigation{
+  display: inline-block;
+  margin: 0 15px;
+}
+
+.listelStyles{
+  color:white
+}
+
+input:focus, textarea {
+    outline: none !important;
+}
+
+.filters{
+  padding: 6px;
+  border-radius: 20px;
+  margin: 5px;
+}
+
+.linkColor{
+  color:white
+ }
+
+ td {
+  border: 1px solid #dddddd1a;
+  padding: 20px;
+  width: 33%;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
 }
 
 .App-header {

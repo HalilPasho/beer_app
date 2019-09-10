@@ -1,26 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom';
+import BeerProducts from './BeerProducts/BeerProducts';
+import BeerDetails from './BeerDetails/BeerDetails'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <Router>
+      <ul>
+        <li className={'navigation'}>
+          <Link className={'linkColor'} to="/">Home</Link>
+        </li>
+        <li className={'navigation'}>
+          <Link className={'linkColor'} to="/beerproducts">Beer Products</Link>
+        </li>
+        <li className={'navigation'}>
+          <Link className={'linkColor'} to="/beerdetails">Beer Products</Link>
+        </li>
+      </ul>
+      <Switch>
+        <Route exact path='/' component={RedirectTo('/')} />
+        <Route exact path='/beerproducts' component={BeerProducts} />
+        <Route exact path='/beerdetails' component={BeerDetails} />
+      </Switch>
+    </Router>
       </header>
     </div>
   );
 }
 
+function RedirectTo(pathname) {
+  return () => (<Redirect to={{ pathname }} />);
+}
+
+
+// <Route path='/shipments/:id/details' component={ShipmentDetails} />
 export default App;
