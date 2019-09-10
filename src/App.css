@@ -19,6 +19,7 @@ input:focus, textarea {
   padding: 6px;
   border-radius: 20px;
   margin: 5px;
+  outline: none !important;
 }
 
 .linkColor{
